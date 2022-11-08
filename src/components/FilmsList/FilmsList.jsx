@@ -7,7 +7,6 @@ const FilmsList = ({ films, bool }) => {
   const location = useLocation();
   return (
     <div>
-     <h1>TRENDING TODAY</h1>
       {films.map(({ title, poster_path, name, id }) => {
        
         const imgSrc = poster_path
