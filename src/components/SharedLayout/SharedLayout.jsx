@@ -17,15 +17,6 @@ export const SharedLayout = () => {
         <Outlet />
       </Suspense>
     </Container>
-    // // <div>
-    // //   <NavLink to="/" end>
-    // //     Home
-    // //   </NavLink>
-    // //   <NavLink to="/movies">Movies</NavLink>
-    //   <Suspense fallback={<div>Loading...</div>}>
-    //     <Outlet />
-    //   </Suspense>
-    // // </div>
   );
 }
 

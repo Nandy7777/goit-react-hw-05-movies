@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Movie = ({ dataCinema }) => {
   const {
@@ -48,3 +49,7 @@ const Movie = ({ dataCinema }) => {
 };
 
 export default Movie;
+
+Movie.propTypes = {
+  dataCinema: PropTypes.object.isRequired,
+};
