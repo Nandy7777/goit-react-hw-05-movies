@@ -1,4 +1,4 @@
-import { Outlet, NavLink, useParams, useLocation } from 'react-router-dom';
+import { Outlet, Link, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import {getDataById} from 'services/movie-api';
 import Movie from 'components/Movie/Movie';
@@ -26,12 +26,12 @@ const MovieDetails = () => {
       {movie && (
         <div>
           <h2>Additional information</h2>
-          <NavLink to="cast" state={{ from: location }}>
+          <Link to="cast" state={{ from: location }}>
             Cast
-          </NavLink>
-          <NavLink to="reviews" state={{ from: location }}>
+          </Link>
+          <Link to="reviews" state={{ from: location }}>
             Reviews
-          </NavLink>
+          </Link>
         </div>
       )}
 
