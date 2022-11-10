@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getDataActorById } from 'services/movie-api';
 import { useParams } from 'react-router-dom';
-
 import def from 'components/images/def.jpg';
-
 import { toast } from 'react-toastify';
 
 const Cast = () => {
