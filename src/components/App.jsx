@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,22 +8,23 @@ const MovieDetails = lazy(() => import('./MovieDetails'));
 const Reviews = lazy(() => import('./Reviews'));
 const Cast = lazy(() => import('./Cast'));
 const Movies = lazy(() => import('./Movies'));
-const Header = lazy(() => import('./Header'))
+const SharedLayout = lazy(() => import('./SharedLayout'));
+const NotFound = lazy(() => import('./NotFound'));
 
 export const App = () => {
   return (
     <div>
-      <Header />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="movies" element={<Movies />}></Route>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
           <Route path="movies/:movieId" element={<MovieDetails />}>
-            <Route path="reviews" element={<Reviews />}></Route>
-            <Route path="cast" element={<Cast />}></Route>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
-        </Routes>
-      </Suspense>
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
       <ToastContainer autoClose={3000} theme="colored" />
     </div>
   );

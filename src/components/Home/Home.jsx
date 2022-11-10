@@ -5,6 +5,7 @@ import FilmsList from 'components/FilmsList';
 
 const Home = () => {
   const [cinema, setCinema] = useState([]);
+  
   useEffect(() => {
     (async () => {
       try {
