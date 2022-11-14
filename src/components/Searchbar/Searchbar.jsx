@@ -10,7 +10,7 @@ import {
 } from './Searchbar.styled';
 import PropTypes from 'prop-types';
 
-export default function Searchbar({ onSubmit }) {
+export default function Searchbar({ setSearchParams }) {
   const [filmName, setFilmName] = useState('');
 
   const handleNameChange = event => {
@@ -24,7 +24,7 @@ export default function Searchbar({ onSubmit }) {
       return toast.error('Please type something!');
     }
 
-    onSubmit(filmName);
+    setSearchParams(filmName !== '' ? { name: filmName.trim() } : {});
     setFilmName('');
   };
 
@@ -50,5 +50,5 @@ export default function Searchbar({ onSubmit }) {
 }
 
 Searchbar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  setSearchParams: PropTypes.func.isRequired,
 };

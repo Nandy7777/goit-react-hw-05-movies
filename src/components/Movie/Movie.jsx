@@ -22,7 +22,7 @@ const Movie = ({ dataCinema }) => {
         <button
           type="button"
           onClick={() => {
-            navigate(location?.state?.from?.pathname ?? '/');
+            navigate(location.state?.from ?? '/');
           }}
         >
           Back
