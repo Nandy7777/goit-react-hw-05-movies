@@ -26,10 +26,10 @@ const MovieDetails = () => {
       {movie && (
         <div>
           <h2>Additional information</h2>
-          <Link to="cast" state={{ from: location }}>
+          <Link to="cast" state={{ from: location.state?.from ?? '/' }}>
             Cast
           </Link>
-          <Link to="reviews" state={{ from: location }}>
+          <Link to="reviews" state={{ from: location.state?.from ?? '/' }}>
             Reviews
           </Link>
         </div>
